@@ -28,7 +28,8 @@ public:
 class Newton : public BaseFractal {
 public:
 	Newton(std::function<std::complex<double>(complex<double>)> fz,
-		std::function<std::complex<double>(complex<double>)> dz, complex<double> a) :
+		std::function<std::complex<double>(complex<double>)> dz,
+		complex<double> a) :
 		roots(), fz(fz), dz(dz), a(a) {}
 
 	Newton(vector<Vec3b> color,

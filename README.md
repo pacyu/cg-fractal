@@ -7,3 +7,9 @@
 \( z = z^5 - 1, a = 0.5 \)
 
 ![img](/cg-fractal/picture.png)
+
+### 曼德尔伯特分形
+
+\( z = z^2 + c \)
+
+![img](https://nekosama.club/img/mandelbrot_frac_cpp.png)
