@@ -12,4 +12,4 @@
 
 \( z = z^2 + c \)
 
-![img](https://nekosama.club/img/mandelbrot_frac_cpp.png)
+![img](/cg-fractal/picture2.png)
