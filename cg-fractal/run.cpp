@@ -42,21 +42,21 @@ void render(double zoom_lx, double zoom_rx, double zoom_ly, double zoom_ry, size
 
 int main()
 {
-	auto fz = [](complex<double> z) { return std::pow(z, 5.) - complex<double>(1., 0.); };
-	auto dz = [](complex<double> z) { return 5. * std::pow(z, 4.); };
+	auto fz = [](complex<double> z) { return std::sin(z) - complex<double>(1., 0.); };
+	auto dz = [](complex<double> z) { return std::cos(z); };
 
-	vector<complex<double>> roots = {
-		complex<double>(1, 0),
-		complex<double>(-(std::sqrt(5) + 1) / 4., -std::sqrt((5 - std::sqrt(5)) / 8.)),
-		complex<double>((std::sqrt(5) - 1) / 4., std::sqrt((5 + std::sqrt(5)) / 8.)),
-		complex<double>((std::sqrt(5) - 1) / 4., -std::sqrt((5 + std::sqrt(5)) / 8.)),
-		complex<double>(-(1. + std::sqrt(5)) / 4., std::sqrt((5 - std::sqrt(5)) / 8.)),
-	};
+	//vector<complex<double>> roots = {
+	//	complex<double>(1, 0),
+	//	complex<double>(-(std::sqrt(5) + 1) / 4., -std::sqrt((5 - std::sqrt(5)) / 8.)),
+	//	complex<double>((std::sqrt(5) - 1) / 4., std::sqrt((5 + std::sqrt(5)) / 8.)),
+	//	complex<double>((std::sqrt(5) - 1) / 4., -std::sqrt((5 + std::sqrt(5)) / 8.)),
+	//	complex<double>(-(1. + std::sqrt(5)) / 4., std::sqrt((5 - std::sqrt(5)) / 8.)),
+	//};
 
-	complex<double> a(-0.5, 0);
+	complex<double> a(1., 0);
 
-	double zoom_lx = -1., zoom_rx = 1.,
-		zoom_ly = -1., zoom_ry = 1.;
+	double zoom_lx = -2., zoom_rx = 2.,
+		zoom_ly = -2., zoom_ry = 2.;
 
 	render(zoom_lx, zoom_rx, zoom_ly, zoom_ry, 40, "newton frac", std::make_unique<Newton>(fz, dz, a));
 	//render(-2, 1, -1.5, 1.5, 255, "mandelbrot frac", std::make_unique<Mandelbrot>());
