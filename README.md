@@ -4,6 +4,6 @@
 # 演示
 
 ### 牛顿分形
-$$ z = z^5 - 1, a = 0.5 $$
+\( z = z^5 - 1, a = 0.5 \)
 
 ![img](/cg-fractal/picture.png)
