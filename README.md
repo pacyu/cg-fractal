@@ -1,15 +1,14 @@
 # cg-fractal
-该项目演示如何使用 C++ 绘制分形。
+This project demonstrates how to draw fractals with C++.
 
-# 演示
+# Some examples
 
-### 牛顿分形
+### Newton's Fractal
 \( z = z^5 - 1, a = -0.5 \)
 
 ![img](/cg-fractal/picture.png)
 
-### 曼德尔伯特分形
-
+### Mandlebrot Fractal
 \( z = z^2 + c \)
 
 ![img](/cg-fractal/picture2.png)
