@@ -8,7 +8,7 @@ This project demonstrates how to draw fractals with C++.
 
 ![img](/cg-fractal/picture.png)
 
-### Mandlebrot Fractal
+### Mandelbort Fractal
 \( z = z^2 + c \)
 
 ![img](/cg-fractal/picture2.png)
