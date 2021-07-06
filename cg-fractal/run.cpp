@@ -19,7 +19,7 @@ Vec3b choose_color(size_t iter) {
 }
 
 void render(double zoom_lx, double zoom_rx, double zoom_ly, double zoom_ry, size_t max_iter,
-	const char* winname, std::unique_ptr<BaseFractal> frac, size_t w = 500, size_t h = 500)
+	const cv::String winname, std::unique_ptr<BaseFractal> frac, size_t w = 500, size_t h = 500)
 {
 	Mat im = Mat::zeros(Size(w, h), CV_8UC3);
 	//FILE* fp = fopen("picture.ppm", "wb");
@@ -38,13 +38,13 @@ void render(double zoom_lx, double zoom_rx, double zoom_ly, double zoom_ry, size
 	//fclose(fp);
 	//imshow(winname, im);
 	//waitKey(0);
-	imwrite("picture.png", im);
+	imwrite(winname + ".png", im);
 }
 
 int main()
 {
-	auto fz = [](complex<double> z) { return std::pow(z, 5.) - complex<double>(1., 0.); };
-	auto dz = [](complex<double> z) { return 5. * std::pow(z, 4); };
+	//auto fz = [](complex<double> z) { return std::pow(z, 5.) - complex<double>(1., 0.); };
+	//auto dz = [](complex<double> z) { return 5. * std::pow(z, 4); };
 
 	//vector<complex<double>> roots = {
 	//	complex<double>(1, 0),
@@ -54,12 +54,12 @@ int main()
 	//	complex<double>(-(1. + std::sqrt(5)) / 4., std::sqrt((5 - std::sqrt(5)) / 8.)),
 	//};
 
-	complex<double> a(.5, 0);
+	//complex<double> a(.5, 0);
 
 	double zoom_lx = -2., zoom_rx = 2.,
 		zoom_ly = -2., zoom_ry = 2.;
 
-	render(zoom_lx, zoom_rx, zoom_ly, zoom_ry, 40, "newton frac", std::make_unique<Newton>(fz, dz, a));
-	//render(-2, 1, -1.5, 1.5, 255, "mandelbrot frac", std::make_unique<Mandelbrot>());
+	//render(zoom_lx, zoom_rx, zoom_ly, zoom_ry, 40, "newton_frac", std::make_unique<Newton>(fz, dz, a));
+	render(-2, 1, -1.5, 1.5, 255, "mandelbrot_frac", std::make_unique<Mandelbrot>());
 	return 0;
 }

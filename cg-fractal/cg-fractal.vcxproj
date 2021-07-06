@@ -147,9 +147,6 @@
   <ItemGroup>
     <ClInclude Include="fractal.h" />
   </ItemGroup>
-  <ItemGroup>
-    <Image Include="picture.png" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
