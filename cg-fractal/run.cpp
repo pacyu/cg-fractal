@@ -3,12 +3,12 @@
 
 Vec3b choose_color(size_t iter) {
 	vector<Vec3b> color = {
-		Vec3b(130, 18, 245),
-		Vec3b(44, 245, 18),
-		Vec3b(254, 183, 18),
-		Vec3b(245, 14, 160),
-		Vec3b(14, 121, 245),
-		Vec3b(0, 0, 0)
+		Vec3b(230, 226, 221),
+		Vec3b(240, 124, 82),
+		Vec3b(179, 240, 82),
+		Vec3b(183, 254, 18),
+		Vec3b(245, 121, 14),
+		Vec3b(255, 248, 240)
 	};
 	if (iter < 7) return color[0];
 	else if (iter < 14) return color[1];
@@ -36,14 +36,15 @@ void render(double zoom_lx, double zoom_rx, double zoom_ly, double zoom_ry, size
 		}
 	}
 	//fclose(fp);
-	imshow(winname, im);
+	//imshow(winname, im);
+	//waitKey(0);
 	imwrite("picture.png", im);
 }
 
 int main()
 {
-	auto fz = [](complex<double> z) { return std::sin(z) - complex<double>(1., 0.); };
-	auto dz = [](complex<double> z) { return std::cos(z); };
+	auto fz = [](complex<double> z) { return std::pow(z, 5.) - complex<double>(1., 0.); };
+	auto dz = [](complex<double> z) { return 5. * std::pow(z, 4); };
 
 	//vector<complex<double>> roots = {
 	//	complex<double>(1, 0),
@@ -53,7 +54,7 @@ int main()
 	//	complex<double>(-(1. + std::sqrt(5)) / 4., std::sqrt((5 - std::sqrt(5)) / 8.)),
 	//};
 
-	complex<double> a(1., 0);
+	complex<double> a(.5, 0);
 
 	double zoom_lx = -2., zoom_rx = 2.,
 		zoom_ly = -2., zoom_ry = 2.;
