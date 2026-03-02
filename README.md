@@ -15,3 +15,7 @@ Simple fractal rendering examples in C++.
 \( z = z^2 + c \)
 
 ![img](/cg-fractal/mandelbrot_frac.png)
+
+* "Seahorse Valley" (海马谷) 坐标
+
+![img](/cg-fractal/zoom_test.png)
