@@ -2,10 +2,11 @@
 #include <complex>
 #include <functional>
 #include <opencv2/opencv.hpp>
+#include <vector>
 
-using namespace cv;
 using std::vector;
 using std::complex;
+using namespace cv;
 
 class BaseFractal {
 public:
