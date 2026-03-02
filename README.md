@@ -1,14 +1,17 @@
 # cg-fractal
-This project demonstrates how to draw fractals with C++.
 
-# Some examples
+Simple fractal rendering examples in C++.
 
-### Newton's Fractal
+# Examples
+
+* Newton's Fractal
+
 \( z = z^5 - 1, a = -0.5 \)
 
 ![img](/cg-fractal/newton_frac.png)
 
-### Mandelbort Fractal
+* Mandelbort Fractal
+
 \( z = z^2 + c \)
 
 ![img](/cg-fractal/mandelbrot_frac.png)
