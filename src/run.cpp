@@ -1,5 +1,7 @@
-#include <iostream>
 #include "fractal.h"
+#include <iostream>
+#include <omp.h>
+
 
 Vec3b lerp_color(Vec3b c1, Vec3b c2, double t) {
 	return Vec3b(
@@ -27,10 +29,11 @@ void render(double zoom_lx, double zoom_rx, double zoom_ly, double zoom_ry, size
 	Mat im = Mat::zeros(Size(w, h), CV_8UC3);
 	//FILE* fp = fopen("picture.ppm", "wb");
 	//fprintf(fp, "P6 %d %d 255 ", w, h);
-	for (size_t i = 0; i < h; i++)
+	#pragma omp parallel for schedule(dynamic)
+	for (int i = 0; i < h; i++)
 	{
 		double zy = zoom_ly + (zoom_ry - zoom_ly) * (double(i) / double(h - 1));
-		for (size_t j = 0; j < w; j++)
+		for (int j = 0; j < w; j++)
 		{
 			double zx = zoom_lx + (zoom_rx - zoom_lx) * (double(j) / double(w - 1));
 			complex<double> z(zx, zy);
@@ -64,6 +67,7 @@ int main()
 
 	//render(zoom_lx, zoom_rx, zoom_ly, zoom_ry, 40, "newton_frac", std::make_unique<Newton>(fz, dz, a));
 	//render(-2, 1, -1.5, 1.5, 255, "mandelbrot_frac", std::make_unique<Mandelbrot>());
+	
 	// 著名的 "Seahorse Valley" (海马谷) 坐标附近
 	double center_x = -0.743643887037158;
 	double center_y = 0.131825904205312;
