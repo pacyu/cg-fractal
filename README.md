@@ -10,7 +10,7 @@ Simple fractal rendering examples in C++.
 
 ![img](/examples/newton_frac.png)
 
-* Mandelbort Fractal
+* Mandelbrot Fractal
 
 \( z = z^2 + c \)
 
